@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
   // eslint: {
   //   ignoreDuringBuilds: true,
   // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "picsum.photos"
+      }
+    ]
+  },
 };
 const withNextIntl = createNextIntlPlugin({
   requestConfig: './src/shared/config/i18n/request.ts',
