@@ -9,23 +9,23 @@ export const ToolkitFooter = () => {
       }
     >
       <div className={"flex items-center gap-4"}>
-        <div className={"flex items-center gap-1 text-sm"}>
+        <div className={"flex items-center text-muted-foreground gap-1 text-xs"}>
           <TbWifi />
           Online
         </div>
 
-        <div className={"flex items-center gap-1 text-sm"}>
+        <div className={"flex items-center text-muted-foreground gap-1 text-xs"}>
           <TbTable />
           Console
         </div>
       </div>
 
       <div className={"flex items-center gap-4"}>
-        <div className={"flex items-center gap-1 text-sm"}>
+        <div className={"flex items-center text-muted-foreground gap-1 text-xs"}>
           <TbCookie />
           Cookies
         </div>
-        <div className={"flex items-center gap-1 text-sm"}>
+        <div className={"flex items-center text-muted-foreground gap-1 text-xs"}>
           <TbInfoCircle />
         </div>
       </div>
