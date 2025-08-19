@@ -71,7 +71,7 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
             );
           })()}
         </header>
-        <div className="flex min-w-0 min-h-[calc(100vh-6rem)] space-y-6">
+        <div className="flex min-h-[calc(100vh-6rem)] space-y-6">
           <div className={"p-4 shrink-0 border-r w-[300px] bg-background/50"}>
             {active === "items" && (
               <div>
@@ -92,7 +92,7 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
               </div>
             )}
           </div>
-          <div className={"p-4"}>
+          <div className={"p-4 w-full"}>
             {children}
           </div>
         </div>
