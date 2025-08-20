@@ -8,8 +8,8 @@ import {
   FolderIcon,
   Globe2Icon,
   ListIcon,
-} from "lucide-react"
-  import { motion } from "framer-motion";
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 type TabKey = "items" | "collections" | "environments";
 

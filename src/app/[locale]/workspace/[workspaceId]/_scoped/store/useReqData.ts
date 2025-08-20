@@ -24,7 +24,7 @@ interface ReqStore {
 export const useReqData = create<ReqStore>((set) => ({
   data: {
     method: "GET",
-    url: null,
+    url: "https://jsonplaceholder.typicode.com/users",
     startedAt: null,
     finishedAt: null,
     duration: null,

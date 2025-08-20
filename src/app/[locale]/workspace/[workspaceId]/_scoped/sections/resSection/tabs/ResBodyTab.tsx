@@ -6,11 +6,13 @@ export const ResBodyTab = () => {
   const { data } = useReqData();
 
   const resData = data.res.body;
-  console.log(resData, "sssss");
+
   return (
-    <div>
+    <div className="w-full">
       <code>
-        <pre>{JSON.stringify(resData, null, 2)}</pre>
+        <pre className="max-h-[37vh] overflow-x-auto whitespace-pre-wrap break-words">
+          {JSON.stringify(resData, null, 2)}
+        </pre>
       </code>
     </div>
   );

@@ -11,9 +11,7 @@ export const ResSection = () => {
     <div className={"grow-1 w-full flex-1 border-t"}>
       <Tabs
         defaultValue="body"
-        className={
-          "overflow-x-scroll text-xs w-full wrap-break-word max-h-[40vh]"
-        }
+        className={"text-xs w-full wrap-break-word max-h-[40vh]"}
       >
         <div className={"w-full flex justify-between items-center"}>
           <TabsList>
