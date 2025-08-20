@@ -1,5 +1,7 @@
 import React from "react";
 import { TbCookie, TbInfoCircle, TbTable, TbWifi } from "react-icons/tb";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/shared/ui/tooltip";
+import { OnlineStatus } from "@/widgets/toolkit-footer/ui/OnlineStatus";
 
 export const ToolkitFooter = () => {
   return (
@@ -9,23 +11,31 @@ export const ToolkitFooter = () => {
       }
     >
       <div className={"flex items-center gap-4"}>
-        <div className={"flex items-center text-muted-foreground gap-1 text-xs"}>
-          <TbWifi />
-          Online
-        </div>
+        <OnlineStatus/>
 
-        <div className={"flex items-center text-muted-foreground gap-1 text-xs"}>
+        <div
+          className={"flex items-center text-muted-foreground gap-1 text-xs"}
+        >
           <TbTable />
           Console
         </div>
       </div>
 
       <div className={"flex items-center gap-4"}>
-        <div className={"flex items-center text-muted-foreground gap-1 text-xs"}>
-          <TbCookie />
-          Cookies
-        </div>
-        <div className={"flex items-center text-muted-foreground gap-1 text-xs"}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="flex items-center text-muted-foreground gap-1 text-xs cursor-default">
+              <TbCookie className="size-4" />
+              Cookies
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>This site uses cookies to enhance your experience.</p>
+          </TooltipContent>
+        </Tooltip>
+        <div
+          className={"flex items-center text-muted-foreground gap-1 text-xs"}
+        >
           <TbInfoCircle />
         </div>
       </div>

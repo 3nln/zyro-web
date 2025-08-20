@@ -2,7 +2,14 @@
 import React, { ReactNode, useState } from "react";
 import { Button } from "@/shared/ui/button";
 import { cn } from "@/shared/lib/utils";
-import { FolderIcon, ListIcon, Globe2Icon, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  FolderIcon,
+  Globe2Icon,
+  ListIcon,
+} from "lucide-react"
+  import { motion } from "framer-motion";
 
 type TabKey = "items" | "collections" | "environments";
 
@@ -17,10 +24,23 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
   const [collapsed, setCollapsed] = useState(true);
 
   return (
-    <div className="flex w-full min-h-[calc(100vh-3.5rem-3rem)]">{/* account for navbar/footer heights if any */}
+    <div className="flex w-full min-h-[calc(100vh-3.5rem-3rem)]">
+      {/* account for navbar/footer heights if any */}
       {/* Left sidebar */}
-      <aside className={cn(collapsed ? "w-16" : "w-72", "shrink-0 border-r bg-accent")}>
-        <div className={cn("p-3 border-b flex items-center", collapsed ? "justify-center" : "justify-between")}> 
+      <motion.aside
+        animate={{ width: collapsed ? 64 : 288 }} // 16 * 4 = 64px, 72 * 4 = 288px
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={cn(
+          collapsed ? "w-16" : "w-72",
+          "shrink-0 border-r bg-accent",
+        )}
+      >
+        <div
+          className={cn(
+            "p-3 border-b flex items-center",
+            collapsed ? "justify-center" : "justify-between",
+          )}
+        >
           {!collapsed && (
             <div>
               <div className="text-sm font-semibold">Workspace</div>
@@ -44,7 +64,7 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
               className={cn(
                 "w-full",
                 collapsed ? "justify-center px-0" : "justify-start",
-                active === key && "font-semibold"
+                active === key && "font-semibold bg-gray-500/10",
               )}
               onClick={() => setActive(key)}
               aria-label={label}
@@ -55,7 +75,7 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
             </Button>
           ))}
         </nav>
-      </aside>
+      </motion.aside>
 
       {/* Right content area */}
       <section className="flex-1 min-w-0">
@@ -76,25 +96,29 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
             {active === "items" && (
               <div>
                 <h3 className="text-sm font-semibold mb-2">Recent Items</h3>
-                <p className="text-sm text-muted-foreground">Manage individual API requests or resources here.</p>
+                <p className="text-sm text-muted-foreground">
+                  Manage individual API requests or resources here.
+                </p>
               </div>
             )}
             {active === "collections" && (
               <div>
                 <h3 className="text-sm font-semibold mb-2">Collections</h3>
-                <p className="text-sm text-muted-foreground">Group related requests into collections.</p>
+                <p className="text-sm text-muted-foreground">
+                  Group related requests into collections.
+                </p>
               </div>
             )}
             {active === "environments" && (
               <div>
                 <h3 className="text-sm font-semibold mb-2">Environments</h3>
-                <p className="text-sm text-muted-foreground">Configure variables for different environments.</p>
+                <p className="text-sm text-muted-foreground">
+                  Configure variables for different environments.
+                </p>
               </div>
             )}
           </div>
-          <div className={"p-4 w-full"}>
-            {children}
-          </div>
+          <div className={"p-4 w-full"}>{children}</div>
         </div>
       </section>
     </div>

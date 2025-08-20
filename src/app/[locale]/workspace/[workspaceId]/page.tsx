@@ -1,7 +1,15 @@
-import React from 'react';
+import React from "react";
+import { ResSection } from "@/app/[locale]/workspace/[workspaceId]/_scoped/sections/ResSection";
+import { ReqSection } from "@/app/[locale]/workspace/[workspaceId]/_scoped/sections/ReqSection";
+import { SubmitReqSection } from "@/app/[locale]/workspace/[workspaceId]/_scoped/sections/SubmitReqSection";
 
-const Page = ({ params }: any) => {
-  const workspaceId = params.workspaceId;
-  return <div>Page {workspaceId}</div>;
+const Page = () => {
+  return (
+    <div className={"w-full flex flex-col h-[calc(100vh-10rem)]"}>
+      <SubmitReqSection />
+      <ReqSection />
+      <ResSection />
+    </div>
+  );
 };
 export default Page;
