@@ -19,7 +19,7 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
   return (
     <div className="flex w-full min-h-[calc(100vh-3.5rem-3rem)]">{/* account for navbar/footer heights if any */}
       {/* Left sidebar */}
-      <aside className={cn(collapsed ? "w-16" : "w-72", "shrink-0 border-r bg-background/50")}> 
+      <aside className={cn(collapsed ? "w-16" : "w-72", "shrink-0 border-r bg-accent")}>
         <div className={cn("p-3 border-b flex items-center", collapsed ? "justify-center" : "justify-between")}> 
           {!collapsed && (
             <div>
@@ -59,7 +59,7 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
 
       {/* Right content area */}
       <section className="flex-1 min-w-0">
-        <header className="px-4 py-3 border-b flex items-center gap-3">
+        <header className="px-4 py-3 border-b flex items-center gap-3 bg-accent">
           {(() => {
             const t = tabs.find((t) => t.key === active)!;
             const Icon = t.icon;
@@ -72,7 +72,7 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
           })()}
         </header>
         <div className="flex min-h-[calc(100vh-6rem)] space-y-6">
-          <div className={"p-4 shrink-0 border-r w-[300px] bg-background/50"}>
+          <div className={"p-4 shrink-0 border-r w-[300px] bg-accent"}>
             {active === "items" && (
               <div>
                 <h3 className="text-sm font-semibold mb-2">Recent Items</h3>
