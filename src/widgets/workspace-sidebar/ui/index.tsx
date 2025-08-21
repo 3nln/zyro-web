@@ -10,6 +10,8 @@ import {
   ListIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { CollectionsTab } from "@/widgets/workspace-sidebar/ui/tabs/CollectionsTab";
+import { EnviromentsTab } from "@/widgets/workspace-sidebar/ui/tabs/EnviromentsTab";
 
 type TabKey = "items" | "collections" | "environments";
 
@@ -92,7 +94,7 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
           })()}
         </header>
         <div className="flex min-h-[calc(100vh-6rem)] space-y-6">
-          <div className={"p-4 shrink-0 border-r w-[300px] bg-accent"}>
+          <div className={"p-2 shrink-0 border-r w-[300px] bg-accent"}>
             {active === "items" && (
               <div>
                 <h3 className="text-sm font-semibold mb-2">Recent Items</h3>
@@ -102,20 +104,10 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
               </div>
             )}
             {active === "collections" && (
-              <div>
-                <h3 className="text-sm font-semibold mb-2">Collections</h3>
-                <p className="text-sm text-muted-foreground">
-                  Group related requests into collections.
-                </p>
-              </div>
+              <CollectionsTab/>
             )}
             {active === "environments" && (
-              <div>
-                <h3 className="text-sm font-semibold mb-2">Environments</h3>
-                <p className="text-sm text-muted-foreground">
-                  Configure variables for different environments.
-                </p>
-              </div>
+              <EnviromentsTab/>
             )}
           </div>
           <div className={"p-4 w-full"}>{children}</div>

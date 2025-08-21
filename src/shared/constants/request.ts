@@ -1,6 +1,6 @@
 import { TMethod } from "@/shared/types/request";
 
-export const REQ_TYPES = [
+export const REQ_METHODS = [
   "GET",
   "POST",
   "PUT",
