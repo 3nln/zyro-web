@@ -1,7 +1,5 @@
 import React from "react";
 
 export const ReqAuthorizationTab = () => {
-  return (
-    <div>ReqAuthorizationTab</div>
-  );
+  return <div>ReqAuthorizationTab</div>;
 };

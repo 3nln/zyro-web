@@ -1,7 +1,5 @@
 import React from "react";
 
 export const ReqBodyTab = () => {
-  return (
-    <div>ReqBodyTab</div>
-  );
+  return <div>ReqBodyTab</div>;
 };

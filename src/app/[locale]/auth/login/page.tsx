@@ -43,7 +43,10 @@ const Page = () => {
               <label htmlFor="password" className="text-sm font-medium">
                 Password
               </label>
-              <Link href="/auth/forgot-password" className="text-xs text-primary hover:underline">
+              <Link
+                href="/auth/forgot-password"
+                className="text-xs text-primary hover:underline"
+              >
                 Forgot password?
               </Link>
             </div>

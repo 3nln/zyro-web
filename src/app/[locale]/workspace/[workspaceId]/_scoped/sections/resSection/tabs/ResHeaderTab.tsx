@@ -1,7 +1,5 @@
 import React from "react";
 
 export const ResHeaderTab = () => {
-  return (
-    <div>ResHeaderTab</div>
-  );
+  return <div>ResHeaderTab</div>;
 };

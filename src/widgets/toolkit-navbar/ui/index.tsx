@@ -56,11 +56,14 @@ export const ToolkitNavbar = () => {
         <div className={"flex items-center gap-4"}>
           <SearchInput />
         </div>
-        <div className={"flex items-center gap-4"}>
-          <TbSettings />
-          <TbBell />
+        <div className={"flex items-center gap-2"}>
+          <Button variant={"ghost"} size={"icon"}>
+            <TbSettings />
+          </Button>
+          <Button variant={"ghost"} size={"icon"}>
+            <TbBell />
+          </Button>
           <ProfileAvatarDropdown />
-          <Button size={"sm"}>Salom</Button>
         </div>
       </div>
     </div>

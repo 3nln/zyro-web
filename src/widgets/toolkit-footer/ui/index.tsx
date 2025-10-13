@@ -11,7 +11,7 @@ export const ToolkitFooter = () => {
       }
     >
       <div className={"flex items-center gap-4"}>
-        <OnlineStatus/>
+        <OnlineStatus />
 
         <div
           className={"flex items-center text-muted-foreground gap-1 text-xs"}
