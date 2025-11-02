@@ -9,7 +9,7 @@ import {
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 import { useReqData } from "@/app/[locale]/workspace/[workspaceId]/_scoped/store/useReqData";
-import { REQ_METHODS, REQ_TYPES } from "@/shared/constants/request";
+import { REQ_METHODS } from "@/shared/constants/request";
 import axios from "axios";
 import { getMethodColor } from "@/shared/lib/getMethodColor";
 

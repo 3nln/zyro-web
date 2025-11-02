@@ -7,22 +7,20 @@ import {
   ChevronRight,
   FolderIcon,
   Globe2Icon,
-  ListIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { CollectionsTab } from "@/widgets/workspace-sidebar/ui/tabs/CollectionsTab";
 import { EnviromentsTab } from "@/widgets/workspace-sidebar/ui/tabs/EnviromentsTab";
 
-type TabKey = "items" | "collections" | "environments";
+type TabKey = "collections" | "environments";
 
 const tabs: { key: TabKey; label: string; icon: React.ElementType }[] = [
-  { key: "items", label: "Items", icon: ListIcon },
   { key: "collections", label: "Collections", icon: FolderIcon },
   { key: "environments", label: "Environments", icon: Globe2Icon },
 ];
 
 export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
-  const [active, setActive] = useState<TabKey>("items");
+  const [active, setActive] = useState<TabKey>("collections");
   const [collapsed, setCollapsed] = useState(true);
 
   return (
@@ -64,7 +62,8 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
               key={key}
               variant={active === key ? "secondary" : "ghost"}
               className={cn(
-                "w-full",
+                "w-full transition-colors",
+                "hover:!bg-gray-500/10 cursor-pointer",
                 collapsed ? "justify-center px-0" : "justify-start",
                 active === key && "font-semibold bg-gray-500/10",
               )}
@@ -95,20 +94,8 @@ export const WorkspaceSidebar = ({ children }: { children?: ReactNode }) => {
         </header>
         <div className="flex min-h-[calc(100vh-6rem)] space-y-6">
           <div className={"p-2 shrink-0 border-r w-[300px] bg-accent"}>
-            {active === "items" && (
-              <div>
-                <h3 className="text-sm font-semibold mb-2">Recent Items</h3>
-                <p className="text-sm text-muted-foreground">
-                  Manage individual API requests or resources here.
-                </p>
-              </div>
-            )}
-            {active === "collections" && (
-              <CollectionsTab/>
-            )}
-            {active === "environments" && (
-              <EnviromentsTab/>
-            )}
+            {active === "collections" && <CollectionsTab />}
+            {active === "environments" && <EnviromentsTab />}
           </div>
           <div className={"p-4 w-full"}>{children}</div>
         </div>
