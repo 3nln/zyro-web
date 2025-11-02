@@ -14,15 +14,15 @@ export const ReqSection = () => {
         <div className={"w-full flex justify-between items-center"}>
           <TabsList>
             <TabsTrigger value="params">
-              Params <span className={"text-green-500"}>(2)</span>
+              Params <span className={"text-green-500 text-xs"}>(2)</span>
             </TabsTrigger>
             <TabsTrigger value="authorization">Authorization</TabsTrigger>
             <TabsTrigger value="headers">
-              Headers <span className={"text-green-500"}>(12)</span>
+              Headers <span className={"text-green-500 text-xs"}>(12)</span>
             </TabsTrigger>
             <TabsTrigger value="body">Body</TabsTrigger>
-            {/*<TabsTrigger value="scripts">Scripts</TabsTrigger>*/}
-            {/*<TabsTrigger value="settings">Settings</TabsTrigger>*/}
+            {/* <TabsTrigger value="scripts">Scripts</TabsTrigger> */}
+            {/* <TabsTrigger value="settings">Settings</TabsTrigger> */}
           </TabsList>
           <Link href={"/cookies"} className={"text-primary text-xs"}>
             Cookies
